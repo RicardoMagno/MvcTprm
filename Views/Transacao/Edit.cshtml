@@ -1,0 +1,64 @@
+@model MvcTprm.Models.Transacao
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Transacao</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TransacaoId" />
+            <div class="form-group">
+                <label asp-for="ClienteContratanteId" class="control-label"></label>
+                <input asp-for="ClienteContratanteId" class="form-control" />
+                <span asp-validation-for="ClienteContratanteId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NomeEmpresa" class="control-label"></label>
+                <input asp-for="NomeEmpresa" class="form-control" />
+                <span asp-validation-for="NomeEmpresa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContratadaId" class="control-label"></label>
+                <input asp-for="ContratadaId" class="form-control" />
+                <span asp-validation-for="ContratadaId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NomeEmpresaContratada" class="control-label"></label>
+                <input asp-for="NomeEmpresaContratada" class="form-control" />
+                <span asp-validation-for="NomeEmpresaContratada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="tipoDeServico" class="control-label"></label>
+                <input asp-for="tipoDeServico" class="form-control" />
+                <span asp-validation-for="tipoDeServico" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="valorDoServico" class="control-label"></label>
+                <input asp-for="valorDoServico" class="form-control" />
+                <span asp-validation-for="valorDoServico" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="descricao" class="control-label"></label>
+                <input asp-for="descricao" class="form-control" />
+                <span asp-validation-for="descricao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
