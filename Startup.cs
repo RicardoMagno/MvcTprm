@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 using MvcTprm.Models;
+using MvcTprm.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace MvcTprm
