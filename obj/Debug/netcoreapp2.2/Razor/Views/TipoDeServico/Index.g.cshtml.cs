@@ -14,17 +14,22 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #line 1 "C:\Users\HP\MvcTprm\Views\_ViewImports.cshtml"
-using MvcTprm;
+using Microsoft.AspNetCore.Identity;
 
 #line default
 #line hidden
 #line 2 "C:\Users\HP\MvcTprm\Views\_ViewImports.cshtml"
+using MvcTprm;
+
+#line default
+#line hidden
+#line 3 "C:\Users\HP\MvcTprm\Views\_ViewImports.cshtml"
 using MvcTprm.Models;
 
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"70d6cc8837bfc4b828d4e652d716d59b1cea1b64", @"/Views/TipoDeServico/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6e0fbff268c6b983a01c5c632c0c370b55c9273d", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f74c7677fbfa597542d52a60bca2e2a258b65481", @"/Views/_ViewImports.cshtml")]
     public class Views_TipoDeServico_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<MvcTprm.Models.TipoDeServico>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "Create", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -66,7 +71,7 @@ using MvcTprm.Models;
             WriteLiteral("\r\n<h1>Index</h1>\r\n\r\n<p>\r\n    ");
             EndContext();
             BeginContext(122, 37, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "70d6cc8837bfc4b828d4e652d716d59b1cea1b644628", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "70d6cc8837bfc4b828d4e652d716d59b1cea1b644754", async() => {
                 BeginContext(145, 10, true);
                 WriteLiteral("Create New");
                 EndContext();
@@ -156,7 +161,7 @@ using MvcTprm.Models;
             WriteLiteral("\r\n            </td>\r\n            <td>\r\n                ");
             EndContext();
             BeginContext(961, 66, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "70d6cc8837bfc4b828d4e652d716d59b1cea1b648773", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "70d6cc8837bfc4b828d4e652d716d59b1cea1b648899", async() => {
                 BeginContext(1019, 4, true);
                 WriteLiteral("Edit");
                 EndContext();
@@ -191,7 +196,7 @@ using MvcTprm.Models;
             WriteLiteral(" |\r\n                ");
             EndContext();
             BeginContext(1047, 72, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "70d6cc8837bfc4b828d4e652d716d59b1cea1b6411104", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "70d6cc8837bfc4b828d4e652d716d59b1cea1b6411230", async() => {
                 BeginContext(1108, 7, true);
                 WriteLiteral("Details");
                 EndContext();
@@ -226,7 +231,7 @@ using MvcTprm.Models;
             WriteLiteral(" |\r\n                ");
             EndContext();
             BeginContext(1139, 70, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "70d6cc8837bfc4b828d4e652d716d59b1cea1b6413442", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "70d6cc8837bfc4b828d4e652d716d59b1cea1b6413568", async() => {
                 BeginContext(1199, 6, true);
                 WriteLiteral("Delete");
                 EndContext();

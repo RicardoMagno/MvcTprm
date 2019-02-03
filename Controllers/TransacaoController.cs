@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using MvcTprm.Data;
 using MvcTprm.Models;
 
 namespace MvcTprm.Controllers
@@ -53,7 +54,7 @@ namespace MvcTprm.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("TransacaoId,ClienteContratanteId,NomeEmpresa,ContratadaId,NomeEmpresaContratada,tipoDeServico,valorDoServico,descricao")] Transacao transacao)
+        public async Task<IActionResult> Create([Bind("TransacaoId,OwnerID,NomeEmpresa,NomeEmpresaContratada,tipoDeServico,valorDoServico,descricao,StatusTransacao")] Transacao transacao)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +86,7 @@ namespace MvcTprm.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("TransacaoId,ClienteContratanteId,NomeEmpresa,ContratadaId,NomeEmpresaContratada,tipoDeServico,valorDoServico,descricao")] Transacao transacao)
+        public async Task<IActionResult> Edit(int id, [Bind("TransacaoId,OwnerID,NomeEmpresa,NomeEmpresaContratada,tipoDeServico,valorDoServico,descricao,StatusTransacao")] Transacao transacao)
         {
             if (id != transacao.TransacaoId)
             {
