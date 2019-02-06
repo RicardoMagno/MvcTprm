@@ -1,0 +1,73 @@
+﻿@model MvcTprm.Models.Transacao
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+<p class="error">@ViewBag.ErrorMessage</p>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Transacao</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.empresaContratanteID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empresaContratanteID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.enpresaContratadaID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.enpresaContratadaID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tipoDeServico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipoDeServico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.valorDoServico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.valorDoServico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StatusTransacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StatusTransacao)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
