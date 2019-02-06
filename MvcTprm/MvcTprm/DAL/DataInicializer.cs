@@ -44,13 +44,13 @@ namespace MvcTprm.DAL
             context.SaveChanges();
             var transacoes = new List<Transacao>
                 {
-                new Transacao{empresaContratanteID=1, enpresaContratadaID=2,tipoDeServico = "TIPO1", valorDoServico=30, descricao="tipo 1" },
-                new Transacao{empresaContratanteID=1, enpresaContratadaID=2,tipoDeServico = "TIPO1", valorDoServico=30, descricao="tipo 1" },
-                new Transacao{empresaContratanteID=1, enpresaContratadaID=2,tipoDeServico = "TIPO1", valorDoServico=30, descricao="tipo 1" },
-                new Transacao{empresaContratanteID=1, enpresaContratadaID=2,tipoDeServico = "TIPO1", valorDoServico=30, descricao="tipo 1" },
-                new Transacao{empresaContratanteID=1, enpresaContratadaID=2,tipoDeServico = "TIPO1", valorDoServico=30, descricao="tipo 1" },
-                new Transacao{empresaContratanteID=1, enpresaContratadaID=2,tipoDeServico = "TIPO1", valorDoServico=30, descricao="tipo 1" },
-                new Transacao{empresaContratanteID=1, enpresaContratadaID=2,tipoDeServico = "TIPO1", valorDoServico=30, descricao="tipo 1" },
+                new Transacao{empresaContratanteID=1, empresaContratadaID=2,tipoDeServico = "TIPO1", valorDoServico=30, descricao="tipo 1" },
+                new Transacao{empresaContratanteID=1, empresaContratadaID=2,tipoDeServico = "TIPO1", valorDoServico=30, descricao="tipo 1" },
+                new Transacao{empresaContratanteID=1, empresaContratadaID=2,tipoDeServico = "TIPO1", valorDoServico=30, descricao="tipo 1" },
+                new Transacao{empresaContratanteID=1, empresaContratadaID=2,tipoDeServico = "TIPO1", valorDoServico=30, descricao="tipo 1" },
+                new Transacao{empresaContratanteID=1, empresaContratadaID=2,tipoDeServico = "TIPO1", valorDoServico=30, descricao="tipo 1" },
+                new Transacao{empresaContratanteID=1, empresaContratadaID=2,tipoDeServico = "TIPO1", valorDoServico=30, descricao="tipo 1" },
+                new Transacao{empresaContratanteID=1, empresaContratadaID=2,tipoDeServico = "TIPO1", valorDoServico=30, descricao="tipo 1" },
 
                 };
             transacoes.ForEach(s => context.Transacoes.Add(s));

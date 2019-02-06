@@ -10,54 +10,46 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.empresaContratanteID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.enpresaContratadaID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.tipoDeServico)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.valorDoServico)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.descricao)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.StatusTransacao)
-        </th>
-        <th></th>
-    </tr>
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Empresa Contratante</th>
+            <th scope="col">EmpresaContratada</th>
+            <th scope="col">Tipo de Serviço</th>
+            <th scope="col">Valor do Serviço</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Status da Transacao</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.empresaContratanteID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.empresaContratadaID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tipoDeServico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.valorDoServico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StatusTransacao)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.TransacaoId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.TransacaoId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.TransacaoId })
+            </td>
+        </tr>
+    }
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.empresaContratanteID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.enpresaContratadaID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.tipoDeServico)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.valorDoServico)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.descricao)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.StatusTransacao)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.TransacaoId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.TransacaoId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.TransacaoId })
-        </td>
-    </tr>
-}
-
+    </tbody>
 </table>
+ 

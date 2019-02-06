@@ -9,7 +9,7 @@ namespace MvcTprm.Models
     {
         public int TransacaoId { get; set; }
         public int empresaContratanteID { get; set; }
-        public int enpresaContratadaID { get; set; }
+        public int empresaContratadaID { get; set; }
         public string tipoDeServico { get; set; }
         public decimal valorDoServico { get; set; }
         public string descricao { get; set; }

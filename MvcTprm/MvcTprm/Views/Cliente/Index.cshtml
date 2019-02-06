@@ -20,33 +20,39 @@
     </p>
 }
 
-<table>
-    <tr>
-        <table class="table">
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.ActionLink("Nome", "Index", new { currentFilter = ViewBag.CurrentFilter })
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>
+                @Html.ActionLink("Nome", "Index", new { currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
             <tr>
-                <th>
-                    @Html.ActionLink("Nome", "Index", new { currentFilter = ViewBag.CurrentFilter })
-                </th>
-                <th></th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ClienteId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ClienteId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ClienteId })
+                </td>
             </tr>
+        }
+    </tbody>
+</table>
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
 
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Nome)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.ClienteId }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.ClienteId }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.ClienteId })
-                    </td>
-                </tr>
-            }
-
-        </table>
-        <br />
-        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
-
-        @Html.PagedListPager(Model, page => Url.Action("Index",
-            new { page, currentFilter = ViewBag.CurrentFilter }))
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, currentFilter = ViewBag.CurrentFilter }))
