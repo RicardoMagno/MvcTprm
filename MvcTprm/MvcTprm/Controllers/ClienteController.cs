@@ -12,6 +12,7 @@ using PagedList;
 
 namespace MvcTprm.Controllers
 {
+    [Authorize(Roles = "Administrador")]
     public class ClienteController : Controller
     {
         private TprmContext db = new TprmContext();
@@ -21,7 +22,6 @@ namespace MvcTprm.Controllers
         {
             ViewBag.CurrentSort = sortOrder;
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
-            ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
 
             if (searchString != null)
             {
@@ -51,7 +51,7 @@ namespace MvcTprm.Controllers
                     break;
             }
 
-            int pageSize = 3;
+            int pageSize = 10;
             int pageNumber = (page ?? 1);
             return View(clientes.ToPagedList(pageNumber, pageSize));
         }

@@ -11,16 +11,17 @@ using MvcTprm.Models;
 
 namespace MvcTprm.Controllers
 {
+    [Authorize(Roles = "Administrador")]
     public class TipoDeServicoController : Controller
     {
         private TprmContext db = new TprmContext();
-
+        [Authorize(Roles = "Administrador, Analista")]
         // GET: TipoDeServico
         public ActionResult Index()
         {
             return View(db.TipoDeServicos.ToList());
         }
-
+        [Authorize(Roles = "Administrador, Analista")]
         // GET: TipoDeServico/Details/5
         public ActionResult Details(int? id)
         {

@@ -11,16 +11,17 @@ using MvcTprm.Models;
 
 namespace MvcTprm.Controllers
 {
+    [Authorize(Roles = "Analista")]
     public class TransacaoController : Controller
     {
         private TprmContext db = new TprmContext();
 
+        [Authorize(Roles = "Analista, Cliente")]
         // GET: Transacao
         public ActionResult Index()
         {
             return View(db.Transacoes.ToList());
         }
-
         // GET: Transacao/Details/5
         public ActionResult Details(int? id)
         {
@@ -35,7 +36,7 @@ namespace MvcTprm.Controllers
             }
             return View(transacao);
         }
-
+        [Authorize(Roles = "Cliente")]
         // GET: Transacao/Create
         public ActionResult Create()
         {
@@ -47,6 +48,7 @@ namespace MvcTprm.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Cliente")]
         public ActionResult Create([Bind(Include = "TransacaoId,empresaContratanteID,enpresaContratadaID,tipoDeServico,valorDoServico,descricao,StatusTransacao")] Transacao transacao)
         {
             try

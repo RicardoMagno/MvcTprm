@@ -11,6 +11,7 @@ using MvcTprm.Models;
 
 namespace MvcTprm.Controllers
 {
+    [Authorize(Roles = "Administrador")]
     public class DividaController : Controller
     {
         private TprmContext db = new TprmContext();
