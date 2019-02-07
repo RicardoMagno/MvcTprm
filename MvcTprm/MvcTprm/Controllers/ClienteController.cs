@@ -82,7 +82,7 @@ namespace MvcTprm.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ClienteId,Nome")] Cliente cliente)
+        public ActionResult Create([Bind(Include = "ClienteId,Nome")] Cliente cliente, Divida divida)
         {
             if (ModelState.IsValid)
             {

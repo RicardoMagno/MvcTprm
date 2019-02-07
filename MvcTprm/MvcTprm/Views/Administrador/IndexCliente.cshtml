@@ -1,0 +1,61 @@
+﻿@model PagedList.IPagedList<MvcTprm.Models.Cliente>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+
+@{
+    ViewBag.Title = "Clientes";
+}
+
+<h2>Clientes</h2>
+
+<li>@Html.ActionLink("Dividas", "IndexDivida", "Administrador")</li>
+<li>@Html.ActionLink("Tipos de Serviços", "IndexTipoDeServico", "Administrador")</li>
+<li>@Html.ActionLink("Empresas", "IndexTransacao", "Administrador")</li>
+
+<p>
+    @Html.ActionLink("Create New", "CreateCliente")
+</p>
+@using (Html.BeginForm())
+{
+    <p>
+        Find by name: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Search" />
+    </p>
+}
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.ActionLink("Nome", "Index", new { currentFilter = ViewBag.CurrentFilter })
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>
+                @Html.ActionLink("Nome", "Index", new { currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditCliente", new { id = item.ClienteId }) |
+                    @Html.ActionLink("Delete", "DeleteCliente", new { id = item.ClienteId })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("IndexCliente",
+    new { page, currentFilter = ViewBag.CurrentFilter }))

@@ -1,0 +1,66 @@
+﻿@model MvcTprm.Models.Transacao
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Transacao</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.empresaContratanteID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empresaContratanteID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empresaContratadaID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empresaContratadaID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tipoDeServico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipoDeServico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.valorDoServico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.valorDoServico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StatusTransacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StatusTransacao)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditTransacao", new { id = Model.TransacaoId }) |
+    @Html.ActionLink("Back to List", "IndexTransacao")
+</p>

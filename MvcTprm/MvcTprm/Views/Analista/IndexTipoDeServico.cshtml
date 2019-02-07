@@ -1,0 +1,36 @@
+﻿@model IEnumerable<MvcTprm.Models.TipoDeServico>
+
+@{
+    ViewBag.Title = "Tipos De Servico";
+}
+
+<h2>Index</h2>
+
+<li>@Html.ActionLink("Tipo de Servico", "IndexTipoDeServico", "Analista")</li>
+<li>@Html.ActionLink("Transacao", "IndexTransacao", "Analista")</li>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Nome do Serviço</th>
+            <th scope="col">Valor do Serviço</th>
+            <th scope="col">Descrição de Serviço</th>
+        </tr>
+    </thead>
+    <tbody>
+          @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeServico)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Valor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descricao)
+                </td>
+            </tr>
+        }
+
+</table>
