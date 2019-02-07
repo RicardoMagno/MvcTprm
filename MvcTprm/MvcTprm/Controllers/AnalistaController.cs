@@ -18,6 +18,7 @@ namespace MvcTprm.Controllers
 
         private TprmContext db = new TprmContext();
 
+        [Authorize(Roles = "Analista")]
         // GET: Analista/TipoDeServico/IndexTipoDeServico
         public ActionResult IndexTipoDeServico(string sortOrder, string currentFilter, string searchString, int? page)
         {
@@ -59,40 +60,9 @@ namespace MvcTprm.Controllers
 
         }
         // GET: Analista/Transacao/IndexTransacao
-        public ActionResult IndexTransacao(string sortOrder, string currentFilter, string searchString, int? page)
+        public ActionResult IndexTransacao()
         {
-            ViewBag.CurrentSort = sortOrder;
-            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
-
-            if (searchString != null)
-            {
-                page = 1;
-            }
-            else
-            {
-                searchString = currentFilter;
-            }
-
-            ViewBag.CurrentFilter = searchString;
-
-            var transacoes = from s in db.Transacoes
-                             select s;
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                transacoes = transacoes.Where(s => s.empresaContratada.Nome.Contains(searchString));
-            }
-            switch (sortOrder)
-            {
-                case "name_desc":
-                    transacoes = transacoes.OrderByDescending(s => s.empresaContratada.Nome);
-                    break;
-                default:
-                    transacoes = transacoes.OrderBy(s => s.empresaContratada.Nome);
-                    break;
-            }
-            int pageSize = 10;
-            int pageNumber = (page ?? 1);
-            return View(transacoes.ToPagedList(pageNumber, pageSize));
+            return View(db.Transacoes.ToList());
         }
 
         [HttpPost]

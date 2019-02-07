@@ -30,16 +30,13 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Clientes", "Index", "Cliente")</li>
-                            <li>@Html.ActionLink("Transacoes", "Index", "Transacao")</li>
-                            <li>@Html.ActionLink("Tipos de servico", "Index", "TipoDeServico")</li>
-                            <li>@Html.ActionLink("Dividas", "Index", "Divida")</li>
+                            <li>@Html.ActionLink("Administrador", "IndexTipoDeServico", "Administrador")</li>
+                            <li>@Html.ActionLink("Analista", "IndexTransacao", "Analista")</li>
+                            <li>@Html.ActionLink("Cliente", "IndexTransacao", "ClienteRole")</li>
                             <li class="divider"></li>
                             <li class="dropdown-header">Nav header</li>
                             <li>@Html.ActionLink("roles", "Index", "Role")</li>
-                            <li>@Html.ActionLink("Administrador", "IndexCliente", "Administrador")</li>
-                            <li>@Html.ActionLink("Analista", "IndexTransacao", "Analista")</li>
-                            <li>@Html.ActionLink("Cliente", "IndexTransacao", "ClienteRole")</li>
+
                         </ul>
                     </li>
                 </ul>

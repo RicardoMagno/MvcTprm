@@ -11,6 +11,7 @@ using PagedList;
 
 namespace MvcTprm.Controllers
 {
+    [Authorize(Roles = "Administrador")]
     public class AdministradorController : Controller
     {
         private TprmContext db = new TprmContext();

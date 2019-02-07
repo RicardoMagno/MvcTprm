@@ -197,6 +197,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902070217364_InitialASchema.cs" />
+    <Compile Include="Migrations\201902070217364_InitialASchema.Designer.cs">
+      <DependentUpon>201902070217364_InitialASchema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902070251269_InitialBSchema.cs" />
+    <Compile Include="Migrations\201902070251269_InitialBSchema.Designer.cs">
+      <DependentUpon>201902070251269_InitialBSchema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\ConfigurationB.cs" />
+    <Compile Include="Migrations\ConfigurationA.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\ClienteDividaViewModel.cs" />
@@ -296,26 +306,6 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Role\Index.cshtml" />
     <Content Include="Views\Role\Create.cshtml" />
-    <Content Include="Views\Cliente\Create.cshtml" />
-    <Content Include="Views\Cliente\Delete.cshtml" />
-    <Content Include="Views\Cliente\Details.cshtml" />
-    <Content Include="Views\Cliente\Edit.cshtml" />
-    <Content Include="Views\Cliente\Index.cshtml" />
-    <Content Include="Views\Divida\Create.cshtml" />
-    <Content Include="Views\Divida\Delete.cshtml" />
-    <Content Include="Views\Divida\Details.cshtml" />
-    <Content Include="Views\Divida\Edit.cshtml" />
-    <Content Include="Views\Divida\Index.cshtml" />
-    <Content Include="Views\TipoDeServico\Create.cshtml" />
-    <Content Include="Views\TipoDeServico\Delete.cshtml" />
-    <Content Include="Views\TipoDeServico\Details.cshtml" />
-    <Content Include="Views\TipoDeServico\Edit.cshtml" />
-    <Content Include="Views\TipoDeServico\Index.cshtml" />
-    <Content Include="Views\Transacao\Create.cshtml" />
-    <Content Include="Views\Transacao\Delete.cshtml" />
-    <Content Include="Views\Transacao\Details.cshtml" />
-    <Content Include="Views\Transacao\Edit.cshtml" />
-    <Content Include="Views\Transacao\Index.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper-utils.min.js.map" />
@@ -358,6 +348,14 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201902070217364_InitialASchema.resx">
+      <DependentUpon>201902070217364_InitialASchema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902070251269_InitialBSchema.resx">
+      <DependentUpon>201902070251269_InitialBSchema.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
